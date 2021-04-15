@@ -6,4 +6,5 @@ def greet():
 def joke():
     r = requests.get('http://api.icndb.com/jokes/random')
     s = r.text.encode('utf-8').decode()
+    s = s.replace('&quot;','"')
     print(s[s.find('joke')+8:s.rfind('.')])
