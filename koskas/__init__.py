@@ -31,6 +31,12 @@ def joke():
 
 
 def isprime(n):
+    if type(n) != int:
+        raise TypeError('Primes are whole numbers')
+    if n <= 0:
+        raise ArithmeticError('"Prime" is only defined for natural numbers')
+    if n == 1:
+        return False
     if n == 2:
         return True
     for i in range(2,math.ceil(math.sqrt(n))+1):
